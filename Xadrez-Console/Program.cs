@@ -12,11 +12,14 @@ namespace Xadrez_Console
         static void Main(string[] args)
         {
             //Posicao P;
-
             //P = new Posicao(3, 4);
-            //Console.WriteLine("Posição: " + P);
+            //Console.WriteLine("Posição: " + P.Linha);
 
             Tabuleiro tab = new Tabuleiro(8,8);
+
+            Tela.ImprimirTabuleiro(tab);
+
+
 
             Console.ReadLine();
         }
