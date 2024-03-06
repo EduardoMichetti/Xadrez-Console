@@ -13,17 +13,25 @@ namespace Xadrez_Console
     {
         static void Main(string[] args)
         {
-
-            //PosicaoXadrez P = new PosicaoXadrez('c', 7);
-            //Console.WriteLine(P);
-
-            //Console.WriteLine(P.ToPosicao());
             try
             {
                 PartidaDeXadrez partida = new PartidaDeXadrez();
 
+                while (!partida.Terminada)
+                {
+                    Console.Clear();
+                    Tela.ImprimirTabuleiro(partida.tab);
 
-                Tela.ImprimirTabuleiro(partida.tab);
+                    Console.WriteLine();
+                    Console.Write("Origem: ");
+                    Posicao origem = Tela.LerPosicaoXadrez().ToPosicao();
+                    Console.Write("Destino: ");
+                    Posicao destino = Tela.LerPosicaoXadrez().ToPosicao();
+
+                    partida.ExecutarMovimento(origem, destino);
+                }
+
+
             }
             catch (TabuleiroException e)
             {
