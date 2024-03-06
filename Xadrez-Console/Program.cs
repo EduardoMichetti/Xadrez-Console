@@ -20,17 +20,10 @@ namespace Xadrez_Console
             //Console.WriteLine(P.ToPosicao());
             try
             {
-                Tabuleiro tab = new Tabuleiro(8, 8);
+                PartidaDeXadrez partida = new PartidaDeXadrez();
 
-                tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
-                tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(1, 0));
-                tab.colocarPeca(new Rei(tab, Cor.Preta), new Posicao(2, 0));
 
-                tab.colocarPeca(new Torre(tab, Cor.Verde), new Posicao(1, 1));
-                tab.colocarPeca(new Torre(tab, Cor.Azul), new Posicao(2, 1));
-                tab.colocarPeca(new Rei(tab, Cor.Branca), new Posicao(3, 1));
-
-                Tela.ImprimirTabuleiro(tab);
+                Tela.ImprimirTabuleiro(partida.tab);
             }
             catch (TabuleiroException e)
             {
